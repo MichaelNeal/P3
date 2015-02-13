@@ -1,0 +1,14 @@
+Websites
+	udacity.com
+	stackoverflow.com
+	google.com
+	developer.mozilla.com
+Books 
+	Javascript The Definitive Guide
+	Professional Javascript for Web Developers
+Forums 
+	N/A
+Blog posts
+	N/A
+Github repositories
+	N/A
