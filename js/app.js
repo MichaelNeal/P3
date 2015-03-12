@@ -11,7 +11,7 @@ var Enemy = function() {
     this.y = Ypos[Math.floor(Math.random() * 3)];
     // Randomize bug speed
     this.speed = Math.floor(Math.random() * 91 + 10);
-}
+};
 
 // Update the enemy's position, required method for game. Parameter: dt, a time delta between ticks
 Enemy.prototype.update = function(dt) {
@@ -24,19 +24,19 @@ Enemy.prototype.update = function(dt) {
         this.y = Ypos[Math.floor(Math.random() * 3)];
     }
     // Parameters for collision detection.
-    x1 = this.x - 80;
-    x2 = this.x + 81;
+    var x1 = this.x - 80;
+    var x2 = this.x + 81;
     // Personally don't approve of this way but it's required by Udacity's style guide.
     if (player.x > x1 && player.x < x2 && player.y - 8 === this.y) {
         // Got ate by bug.
         player.reset();
     }
-}
+};
 
 // Draw the enemy on the screen, required method for game
 Enemy.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 
 // -- Player Class -----------------------------------------------------------
 
@@ -44,7 +44,7 @@ var Player = function() {
     this.sprite = 'images/char-boy.png';
     this.x = 200;
     this.y = 400;
-}
+};
 
 Player.prototype.update = function(dt) {
     // You should multiply any movement by the dt parameter which will ensure the game runs at the same speed for all computers.
@@ -62,22 +62,22 @@ Player.prototype.update = function(dt) {
         this.reset();
     }
     this.ctlKey = null;
-}
+};
 
 // Draw the player on the screen, required method for game
 
 Player.prototype.render = function() {
     ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
-}
+};
 Player.prototype.handleInput = function(key) {
     this.ctlKey = key;
-}
+};
 
 // Reset player to starting position.
 Player.prototype.reset = function() {
     player.x = 200;
     player.y = 400;
-}
+};
 
 /*instantiate objects*/
 var enemy1 = new Enemy();
